@@ -164,7 +164,7 @@ def main():
         print("8. Remove Librarian")
         print("9. Exit")
     
-        choice = input("Enter Choice:")
+        choice = int(input("Enter Choice:"))
 
         if choice == 1:
             libsystem.display_books()

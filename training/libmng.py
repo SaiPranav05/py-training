@@ -154,7 +154,7 @@ def main():
     libsystem.add_member("chaitanya",22,"M0002")
 
     while True:
-        print("/n 1. List Books")
+        print("\n 1. List Books")
         print("2. Add Book to library")
         print("3. Remove Book from library")
         print("4. Borrow Book from library")
@@ -163,53 +163,56 @@ def main():
         print("7. Add Librarian")
         print("8. Remove Librarian")
         print("9. Exit")
+        try:
+            
+            choice = int(input("Enter Choice:"))
     
-        choice = int(input("Enter Choice:"))
-
-        if choice == 1:
-            libsystem.display_books()
-        
-        elif choice == 2:
-            title = input("Enter Book Title:")
-            author = input("Enter Book Author:")
-            isbn = input("Enter ISBN:")
-            libsystem.add_book(title,author,isbn)
-        
-        elif choice == 3:
-            isbn = input("Enter ISBN:")
-            libsystem.remove_book(isbn)
-
-        elif choice == 4:
-            member_id = input("Enter Member ID:")
-            isbn = input("Enter ISBN:")
-            libsystem.borrow_book(member_id,isbn)
-        
-        elif choice == 5:
-            name = input("Enter Your Name:")
-            age = input("Enter your age:")
-            member_id = ("Enter your member_id:")
-            libsystem.add_member(name,age,member_id)
-        
-        elif choice == 6:
-            member_id = input("Enter your member_id:")
-            libsystem.remove_member(member_id)
-        
-        elif choice == 7:
-            name = input("Enter your name:")
-            age = input("Enter your age:")
-            employee_id = input("enter your employee_id:")
-            libsystem.set_librarian(name,age,employee_id)
-        
-        elif choice == 8:
-            employee_id = input("Enter your employee_id:")
-            libsystem.remove_librarian(employee_id)
-        
-        elif choice == 9:
-            print("Exiting System")
-            break
-        
-        else:
-            print("Invalid Choice")
-
+            if choice == 1:
+                libsystem.display_books()
+            
+            elif choice == 2:
+                title = input("Enter Book Title:")
+                author = input("Enter Book Author:")
+                isbn = input("Enter ISBN:")
+                libsystem.add_book(title,author,isbn)
+            
+            elif choice == 3:
+                isbn = input("Enter ISBN:")
+                libsystem.remove_book(isbn)
+    
+            elif choice == 4:
+                member_id = input("Enter Member ID:")
+                isbn = input("Enter ISBN:")
+                libsystem.borrow_book(member_id,isbn)
+            
+            elif choice == 5:
+                name = input("Enter Your Name:")
+                age = input("Enter your age:")
+                member_id = ("Enter your member_id:")
+                libsystem.add_member(name,age,member_id)
+            
+            elif choice == 6:
+                member_id = input("Enter your member_id:")
+                libsystem.remove_member(member_id)
+            
+            elif choice == 7:
+                name = input("Enter your name:")
+                age = input("Enter your age:")
+                employee_id = input("enter your employee_id:")
+                libsystem.set_librarian(name,age,employee_id)
+            
+            elif choice == 8:
+                employee_id = input("Enter your employee_id:")
+                libsystem.remove_librarian(employee_id)
+            
+            elif choice == 9:
+                print("Exiting System")
+                break
+            
+            else:
+                print("Invalid Choice")
+        except ValueError:
+            print("Invalid Choice. Enter a Valid Choice")
+            
 if __name__ == "__main__":
     main()
